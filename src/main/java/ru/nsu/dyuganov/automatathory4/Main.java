@@ -22,5 +22,11 @@ public class Main {
         P = parser.parseP(N, T);
         S = parser.parseS(N);
 
+        GrammarChecker storeMemoryMachine = new GrammarChecker(N,T,P,S);
+
+        System.out.println("\nEnter a string to recognize from the characters of the set ∑");
+        boolean result = storeMemoryMachine.checkIfLL1();
+        System.out.println("\n____________________________________________");
+        System.out.println(result ? "It's LL(1) grammar!" : "This grammar isn't LL(1)");
     }
 }
